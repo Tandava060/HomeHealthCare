@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/font-awesome.min.css" /> -->
+          <link rel="stylesheet" href="/css/animate.css" />
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/et-line-icons.css" />
+        <link rel="stylesheet" href="/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="/css/themify-icons.css">
+        <link rel="stylesheet" href="/css/swiper.min.css">
+        <link rel="stylesheet" href="/css/justified-gallery.min.css">
+        <link rel="stylesheet" href="/css/magnific-popup.css" />
+        <link rel="stylesheet" type="text/css" href="/revolution/css/settings.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="/revolution/css/layers.css">
+        <link rel="stylesheet" type="text/css" href="/revolution/css/navigation.css">
+        <link rel="stylesheet" href="/css/bootsnav.css">
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/responsive.css" />
+        <link rel="stylesheet" href="/css/dashboard.css" />
+    </head>
+    <body>
+      <%- include('./partials/navbarAdmin.ejs') %>
+      <section class="wow fadeIn">
+        <div class="container mt-5">
+            <h3>Contact Form Answers</h3>
+            <div class="mt-5">
+                <table class="text-center table  table-bordered">
+                    <thead>
+                      <tr class="table-info">
+                        <th scope="col">No</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Client Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">view</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <% var i = 1 %>
+                        <% formData.forEach(function(data){ %>
+                      <tr>
+                        <th scope="row"><%= i %></th>
+                        <td><%= data.title %></td>
+                        <td><%= data.name %></td>
+                        <td><%= data.email %></td>
+                        <td class="text-center"><a href="/contact/view/<%= data.ID %>" class="btn btn-primary ">More info</a></td>
+                        <td class="text-center"><form action="/contact/delete/<%= data.ID %>" method="POST"><button type="submit" class="btn btn-danger">Delete</button></form></td>
+                      </tr>
+                      <%  i = i + 1 %>
+                    <% }); %>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+      </section>
+        <%- include('./partials/footer.ejs') %>
+        <script src="" async defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+    </body>
+</html>

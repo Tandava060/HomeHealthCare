@@ -1,0 +1,202 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <title>Unrism - Contact Us</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+        <meta name="author" content="Unrism">
+        <meta name="description" content="Unrism is an innovative software development company and specialises in web development and mobile app development as well as intelligent solutions powered by Artificial Intelligence">
+        <meta name="keywords" content="software development, mobile app development, web development, web design, software, software company, develop app mauritius, creative, modern, clean, agency, corporate, start-up, studio, branding, designer, artificial Intelligence, intelligent solutions">
+        <!-- <link rel="shortcut icon" href="images/favicon.png"> -->
+        <!-- <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png"> -->
+     
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="css/animate.css" />
+        <link rel="stylesheet" href="css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/et-line-icons.css" />
+        <link rel="stylesheet" href="css/font-awesome.min.css" />
+        <link rel="stylesheet" href="css/themify-icons.css">
+        <link rel="stylesheet" href="css/swiper.min.css">
+        <link rel="stylesheet" href="css/justified-gallery.min.css">
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <link rel="stylesheet" type="text/css" href="revolution/css/settings.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="revolution/css/layers.css">
+        <link rel="stylesheet" type="text/css" href="revolution/css/navigation.css">
+        <link rel="stylesheet" href="css/bootsnav.css">
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <!-- ----------- -->
+    </head>
+    <body>
+        <div class="box-layout">
+            <!-- navbar  -->
+            <%- include('partials/navbar.ejs') %>
+ 
+        <!-- start contact form section -->
+        <section class="wow fadeIn big-section" id="section-down"  style="padding-top:15px ">
+            <div class="container">
+                <div class="row equalize sm-equalize-auto">
+                    <div class="col-md-6 col-sm-12 col-xs-12 sm-margin-30px-bottom wow fadeInLeft">
+                        <div class="padding-fifteen-all bg-light-gray border-radius-6 md-padding-seven-all xs-padding-30px-all height-100">
+                                                                   
+                                <% if (status) {%> 
+                                    <% if (status == true) {%>  
+                                        <h3 style="text-align: center;font-size: 28px;margin: 45% auto;font-weight: bold;">Your message has been sent succesfully. <br>We request you to also send us a mesage at +230 59810950 (message/whatsapp)</h3>
+                                        <% } else { %>
+                                            <div style="text-align: center;font-size: 25px;margin: 45% auto;font-weight: bold;">
+                                                <h3>Your message was not sent succesfully.</h3>
+                                                <h4>Try again later.</h4>
+                                            </div>
+                                          
+                                        <% } %>
+                                    <% } else { %>
+                                        <span class="text-extra-dark-gray alt-font text-large font-weight-600 margin-25px-bottom display-block">Get in touch with us</span> 
+                            <form id="contact-form" action="/contact" method="POST">
+                                <div>
+                                    <div id="success-contact-form" class="no-margin-lr"></div>
+                                    <input type="text" name="name" id="name" placeholder="Name*" class="border-radius-4 bg-white medium-input" required>
+                                    <input type="email" name="email" id="email" placeholder="E-mail*" class="border-radius-4 bg-white medium-input" required>
+                                    <input type="text" name="title" id="subject" placeholder="Project Title*" class="border-radius-4 bg-white medium-input" required>
+                  
+                                    <div class="select-style border-radius-4 bg-white medium-select">
+                                        <select name="budget" id="budget" class="bg-transparent no-margin-bottom" required>
+                                            <option value="#">Select your budget</option>
+                                            <option value="$500 - $1000">$300 - $500 | Rs 9999 - Rs 25000</option>
+                                            <option value="$1000 - $2000">$500 - $1000 | Rs 25000 - Rs 40000 </option>
+                                            <option value="$2000 - $5000">$1000 - $3000 | Rs 40000 - Rs 120000 </option>
+                                            <option value="$3000+">$3000 | Rs 120000 +</option>
+                                        </select>
+                                    </div>
+                                   
+                                    <textarea name="description" id="comment" placeholder="Describe your project" rows="5" class="border-radius-4 bg-white medium-textarea" required></textarea>
+                                    <button id="contact-us-button" type="submit" class="btn btn-small border-radius-4 btn-dark-gray">send message</button>
+                                </div>
+                            </form>
+                            <% } %>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12 last-paragraph-no-margin wow fadeInRight">
+                        <div class="padding-ten-all bg-light-gray border-radius-6 md-padding-seven-all xs-padding-30px-all height-100 sm-text-center">
+                            <img src="/images/screen3.jpg" alt="" class="border-radius-6 margin-35px-bottom xs-margin-30px-bottom">
+                            <span class="text-large font-weight-600 alt-font text-extra-dark-gray margin-5px-bottom display-block">Do you have more specific needs?</span>
+                            <p>While our core activities lie in web development and mobile app development, we also specialise in research and development of  to enhance current  industry standards such as one-touch deployment of intelligent e-commerce platforms or affordable and secure online payment gateways.
+                            </p>
+                            <p>If you have any specific queries or need very fast responses, you can also contact us via phone or whatsapp or even email us. </p>
+                            <a href="#contact-details" class="btn btn-dark-gray btn-small text-extra-small border-radius-4 margin-25px-top">Contact Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+         </div>
+        <!-- end contact form section -->
+        <!-- start information section -->
+        <section class="no-padding-tb bg-light-gray wow fadeIn" id="contact-details">
+            <div class="container-fluid no-padding">
+                <div class="row no-margin">
+                    <!-- start info box item -->
+                    <div class="col-md-4 no-padding image-hover-style-3 height-100 last-paragraph-no-margin">
+                        <div class="feature-box-wrap">
+                            <div class="width-100 small-screen xs-height-300px display-table arrow-top">
+                                <div class="display-table-cell vertical-align-middle padding-eighteen-lr md-padding-twelve-lr text-center sm-padding-ten-lr xs-padding-seven-all">
+                                    <i class="icon-map text-deep-pink icon-medium margin-25px-bottom"></i>
+                                    <div class="text-extra-dark-gray text-uppercase alt-font font-weight-600 margin-5px-bottom">Meet us</div>
+                                    <p class="width-55 center-col text-medium md-width-100">Message or call us first to schedule a meeting</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end info box item -->
+                    <!-- start info box item -->
+                    <div class="col-md-4 no-padding image-hover-style-3 height-100 last-paragraph-no-margin">
+                        <div class="feature-box-wrap sm-swap-block">
+                           
+                            <div class="width-100 small-screen xs-height-300px display-table arrow-bottom">
+                                <div class="display-table-cell vertical-align-middle padding-eighteen-lr md-padding-twelve-lr text-center sm-padding-ten-lr xs-padding-seven-all">
+                                    <i class="icon-chat text-deep-pink icon-medium margin-25px-bottom"></i>
+                                    <div class="text-extra-dark-gray text-uppercase alt-font font-weight-600 margin-5px-bottom">Call or Message</div>
+                                    <p class="center-col text-medium no-margin">Phone: +230 59810950</p>
+                                    <p class="center-col text-medium"><a href="https://api.whatsapp.com/send?phone=23059810950&text=Hi there!">Whatsapp: +230 59810950</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end info box item -->
+                    <!-- start info box item -->
+                    <div class="col-md-4 no-padding image-hover-style-3 height-100 last-paragraph-no-margin">
+                        <div class="feature-box-wrap">
+                            <div class="width-100 small-screen xs-height-300px display-table arrow-top">
+                                <div class="display-table-cell vertical-align-middle padding-eighteen-lr md-padding-twelve-lr text-center sm-padding-ten-lr xs-padding-seven-all">
+                                    <i class="icon-envelope text-deep-pink icon-medium margin-25px-bottom"></i>
+                                    <div class="text-extra-dark-gray text-uppercase alt-font font-weight-600 margin-5px-bottom">Email Us</div>
+                                    <p class="center-col text-medium no-margin"><a href="mailto:unrism.ltd@gmail.com">unrism.ltd@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- end info box item -->
+                </div>    
+            </div>
+        </section>
+        <!-- start information section -->        
+        <!-- start call to action section -->
+        <%- include('partials/chat.ejs') %>
+        
+        <%- include('partials/footer.ejs') %>
+
+        <!-- start scroll to top -->
+        <!-- <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a> -->
+        <!-- end scroll to top -->
+        <!-- javascript libraries -->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/modernizr.js"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="js/skrollr.min.js"></script>
+        <script type="text/javascript" src="js/smooth-scroll.js"></script>
+        <script type="text/javascript" src="js/jquery.appear.js"></script>
+        <!-- menu navigation -->
+        <script type="text/javascript" src="js/bootsnav.js"></script>
+        <script type="text/javascript" src="js/jquery.nav.js"></script>
+        <!-- animation -->
+        <script type="text/javascript" src="js/wow.min.js"></script>
+        <!-- page scroll -->
+        <script type="text/javascript" src="js/page-scroll.js"></script>
+        <!-- swiper carousel -->
+        <script type="text/javascript" src="js/swiper.min.js"></script>
+        <!-- counter -->
+        <script type="text/javascript" src="js/jquery.count-to.js"></script>
+        <!-- parallax -->
+        <script type="text/javascript" src="js/jquery.stellar.js"></script>
+        <!-- magnific popup -->
+        <script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
+        <!-- portfolio with shorting tab -->
+        <script type="text/javascript" src="js/isotope.pkgd.min.js"></script>
+        <!-- images loaded -->
+        <script type="text/javascript" src="js/imagesloaded.pkgd.min.js"></script>
+        <!-- pull menu -->
+        <script type="text/javascript" src="js/classie.js"></script>
+        <script type="text/javascript" src="js/hamburger-menu.js"></script>
+        <!-- counter -->
+        <script type="text/javascript" src="js/counter.js"></script>
+        <!-- fit video -->
+        <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+        <!-- equalize -->
+        <script type="text/javascript" src="js/equalize.min.js"></script>
+        <!-- skill bars -->
+        <script type="text/javascript" src="js/skill.bars.jquery.js"></script> 
+        <!-- justified gallery -->
+        <script type="text/javascript" src="js/justified-gallery.min.js"></script>
+        <!--pie chart-->
+        <script type="text/javascript" src="js/jquery.easypiechart.min.js"></script>
+        <!-- instagram -->
+        <script type="text/javascript" src="js/instafeed.min.js"></script>
+        <!-- retina -->
+        <script type="text/javascript" src="js/retina.min.js"></script>
+        <!-- revolution -->
+        <script type="text/javascript" src="revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script type="text/javascript" src="revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,149 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <title> <%= title %></title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
+        <meta name="author" content="Unrism">
+        <meta name="description" content="Unrism is an innovative software development company and specialises in web development and mobile app development as well as intelligent solutions powered by Artificial Intelligence">
+        <meta name="keywords" content="software development, mobile app development, web development, web design, software, software company, develop app mauritius, creative, modern, clean, agency, corporate, start-up, studio, branding, designer, artificial Intelligence, intelligent solutions">
+        <!-- <link rel="shortcut icon" href="images/favicon.png"> -->
+        <!-- <link rel="apple-touch-icon" href="images/apple-touch-icon-57x57.png"> -->
+     
+        <!-- Stylesheets -->
+        <link rel="stylesheet" href="/css/animate.css" />
+        <link rel="stylesheet" href="/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="/css/et-line-icons.css" />
+        <link rel="stylesheet" href="/css/font-awesome.min.css" />
+        <link rel="stylesheet" href="/css/themify-icons.css">
+        <link rel="stylesheet" href="/css/swiper.min.css">
+        <link rel="stylesheet" href="/css/justified-gallery.min.css">
+        <link rel="stylesheet" href="/css/magnific-popup.css" />
+        <link rel="stylesheet" type="text/css" href="/revolution/css/settings.css" media="screen" />
+        <link rel="stylesheet" type="text/css" href="/revolution/css/layers.css">
+        <link rel="stylesheet" type="text/css" href="/revolution/css/navigation.css">
+        <link rel="stylesheet" href="/css/bootsnav.css">
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/responsive.css" />
+        <link rel="stylesheet" href="/css/dashboard.css" />
+        <!-- ----------- -->
+    </head>
+    <body>
+        <div class="box-layout">
+            <!-- navbar  -->
+            <%- include('../partials/navbarAdmin.ejs') %>
+
+             <!-- start about services section -->
+            <section id="about" class="wow fadeIn">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-md-8 col-sm-10 col-xs-12 text-center center-col margin-eight-bottom xs-margin-30px-bottom">
+                            <!-- <span class="alt-font text-deep-pink text-medium margin-5px-bottom display-block">User <%= session.user.name %> is logged in</span> -->
+                            <h5 class="font-weight-300 text-extra-dark-gray">Admin Dashboard</h5>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        
+                        <!-- TO ADD href for each respective dashboard -->
+                        <!-- BLOG MANAGEMENT -->
+                        <div class="col-md-4 col-sm-4 col-xs-12 xs-margin-five-bottom last-paragraph-no-margin wow fadeInUp">
+                            <a href="/blogs/admin-view">
+                                <div class="feature-box">
+                                    <div class="content">
+                                        <i class="icon-mobile icon-extra-medium text-medium-gray xs-margin-10px-bottom position-relative top-minus3"></i>
+                                        <div class="text-medium alt-font text-capitalize text-extra-dark-gray margin-10px-bottom sm-margin-5px-bottom">Blog Management</div>
+                                        <p class="width-85 margin-lr-auto sm-width-100">Add, update or delete all your blogs</p>
+                                    </div> 
+                            </div>       
+                            </a>
+                        </div>
+ 
+
+                        <!-- CONTACT MANAGEMENT -->
+                        <div class="col-md-4 col-sm-4 col-xs-12 xs-margin-five-bottom last-paragraph-no-margin wow fadeInUp">
+                            <a href="/contact/admin"> <div class="feature-box">
+                                <div class="content">
+                                    <i class="icon-globe icon-extra-medium text-medium-gray xs-margin-10px-bottom position-relative top-minus3"></i>
+                                    <div class="text-medium alt-font text-capitalize text-extra-dark-gray margin-10px-bottom sm-margin-5px-bottom">Contact Form Management</div>
+                                   <p class="width-85 margin-lr-auto sm-width-100">View and search all your contact forms</p>
+                                </div>
+                            </div></a>
+                        </div>
+                        
+                        <!-- start feature box item -->
+                        <div class="col-md-4 col-sm-4 col-xs-12 xs-margin-five-bottom last-paragraph-no-margin wow fadeInUp">
+                            <a href="/blogs/images">
+                                <div class="feature-box">
+                                    <div class="content">
+                                        <i class="icon-tools icon-extra-medium text-medium-gray xs-margin-10px-bottom position-relative top-minus3"></i>
+                                        <div class="text-medium alt-font text-capitalize text-extra-dark-gray margin-10px-bottom sm-margin-5px-bottom">Gallery</div>
+                                        <p class="width-85 margin-lr-auto sm-width-100">Add or delete images</p>
+                                    </div>   
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                  
+                </div>
+            </section>
+ 
+        </div>
+        <%- include('../partials/footer.ejs') %>
+
+        <!-- start scroll to top -->
+        <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a>
+        <!-- end scroll to top -->
+        <!-- javascript libraries -->
+        <script type="text/javascript" src="/js/jquery.js"></script>
+        <script type="text/javascript" src="/js/modernizr.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/jquery.easing.1.3.js"></script>
+        <script type="text/javascript" src="/js/skrollr.min.js"></script>
+        <script type="text/javascript" src="/js/smooth-scroll.js"></script>
+        <script type="text/javascript" src="/js/jquery.appear.js"></script>
+        <!-- menu navigation -->
+        <script type="text/javascript" src="/js/bootsnav.js"></script>
+        <script type="text/javascript" src="/js/jquery.nav.js"></script>
+        <!-- animation -->
+        <script type="text/javascript" src="/js/wow.min.js"></script>
+        <!-- page scroll -->
+        <script type="text/javascript" src="/js/page-scroll.js"></script>
+        <!-- swiper carousel -->
+        <script type="text/javascript" src="/js/swiper.min.js"></script>
+        <!-- counter -->
+        <script type="text/javascript" src="/js/jquery.count-to.js"></script>
+        <!-- parallax -->
+        <script type="text/javascript" src="/js/jquery.stellar.js"></script>
+        <!-- magnific popup -->
+        <script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+        <!-- portfolio with shorting tab -->
+        <script type="text/javascript" src="/js/isotope.pkgd.min.js"></script>
+        <!-- images loaded -->
+        <script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>
+        <!-- pull menu -->
+        <script type="text/javascript" src="/js/classie.js"></script>
+        <script type="text/javascript" src="/js/hamburger-menu.js"></script>
+        <!-- counter -->
+        <script type="text/javascript" src="/js/counter.js"></script>
+        <!-- fit video -->
+        <script type="text/javascript" src="/js/jquery.fitvids.js"></script>
+        <!-- equalize -->
+        <script type="text/javascript" src="/js/equalize.min.js"></script>
+        <!-- skill bars -->
+        <script type="text/javascript" src="/js/skill.bars.jquery.js"></script> 
+        <!-- justified gallery -->
+        <script type="text/javascript" src="/js/justified-gallery.min.js"></script>
+        <!--pie chart-->
+        <script type="text/javascript" src="/js/jquery.easypiechart.min.js"></script>
+        <!-- instagram -->
+        <script type="text/javascript" src="/js/instafeed.min.js"></script>
+        <!-- retina -->
+        <script type="text/javascript" src="/js/retina.min.js"></script>
+        <!-- revolution -->
+        <script type="text/javascript" src="/revolution/js/jquery.themepunch.tools.min.js"></script>
+        <script type="text/javascript" src="/revolution/js/jquery.themepunch.revolution.min.js"></script>
+        <script type="text/javascript" src="/js/main.js"></script>
+    </body>
+</html>
