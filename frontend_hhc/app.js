@@ -13,7 +13,7 @@ var dotenv = require('dotenv').config();
 var debug = require('debug')('my-application');
 
 //Routes
- 
+var routes = require('./routes/index');
 var contact = require('./routes/contact');
 var admin = require('./routes/admin');
  
@@ -43,7 +43,7 @@ app.use(session({
     }
 }));
 
-
+app.use('/', routes);
 app.use('/contact', contact);
 app.use('/admin', admin);
  
