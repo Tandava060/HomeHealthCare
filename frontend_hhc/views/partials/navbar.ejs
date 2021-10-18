@@ -1,80 +1,44 @@
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-LZEMFG33QY"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-LZEMFG33QY');
-</script>
-<script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '583299046456209',
-        cookie     : true,
-        xfbml      : true,
-        version    : '12.0'
-      });
-        
-      FB.AppEvents.logPageView();   
-        
-    };
-  
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
-<header>
-    <nav class="navbar navbar-default bootsnav bg-transparent navbar-scroll-top header-light nav-box-width">
-        <div class="container-fluid nav-header-container">
-            <div class="row">
-                <div class="col-md-2 col-xs-4">
-                    <a href="/" title='<%= title %>'' class="logo">
-                        <!-- <h6 style="padding-top: 30%;"><%= title %></h6> -->
-                        <img src="/images/logo.png" data-rjs="/images/logo.png" class="logo-dark default" alt="<%= title %>"> 
-                    </a>
-                </div>
-                <div class="col-md-7 col-xs-8 width-auto pull-right accordion-menu xs-no-padding-right">
-                    <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#navbar-collapse-toggle-1">
-                        <span class="sr-only">toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <div class="navbar-collapse collapse pull-right" id="navbar-collapse-toggle-1">
-                        <ul id="accordion" class="nav navbar-nav navbar-left no-margin alt-font text-normal" data-in="fadeIn" data-out="fadeOut">
-                        
-                            <li class="dropdown megamenu-fw">
-                                <a href="/">Home</a>
-                            </li>
-                            <li class="dropdown simple-dropdown"><a href="/services">
-                                Our Services</a>
-                            </li>
-                            <li class="dropdown simple-dropdown">
-                                <a href="/contact">Contact Us</a>
-                            </li>
-                            <li class="dropdown simple-dropdown">
-                                <a href="/about">About us</a>
-                            </li>
-                            <li class="dropdown simple-dropdown">
-                                <a href="/blogs">Blog</a>
-                            </li>
-                        </ul>
+<div class="header-area">
+    <div class="main-header header-sticky">
+        <div class="container-fluid">
+            <div class="row align-items-center">
+                <!-- Logo -->
+                <div class="col-xl-2 col-lg-2 col-md-1">
+                    <div class="logo">
+                        <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col-md-2 width-auto">
-                    <div class="header-social-icon xs-display-none">
-                        <a href="https://www.facebook.com/unrism.ltd" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.linkedin.com/company/unrism-ltd" title="linkedin"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.instagram.com/unrism.ltd" title="instagram"><i class="fab fa-instagram"></i></a>
+                <div class="col-xl-10 col-lg-10 col-md-10">
+                    <div class="menu-main d-flex align-items-center justify-content-end">
+                        <!-- Main-menu -->
+                        <div class="main-menu f-right d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a href="/frontend_hhc/views/home.ejs">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="doctor.html">Doctors</a></li>
+                                    <li><a href="department.html">Department</a></li>
+                                    <li><a href="blog.html"> ?</a> </li>
+                                        <!-- <ul class="submenu">
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="blog_details.html">Blog Details</a></li>
+                                            <li><a href="elements.html">Element</a></li>
+                                        </ul> -->
+                                    
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <div class="header-right-btn f-right d-none d-lg-block ml-30">
+                            <a href="#" class="btn header-btn">01654.066.456</a>
+                        </div>
                     </div>
+                </div>   
+                <!-- Mobile Menu -->
+                <div class="col-12">
+                    <div class="mobile_menu d-block d-lg-none"></div>
                 </div>
             </div>
         </div>
-    </nav>
-</header>
-<!-- end navbar -->
+    </div>
+</div>
