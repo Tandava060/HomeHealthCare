@@ -48,9 +48,22 @@ app.use('/admin', admin);
 
 app.get('/home', function (req, res) {
     // app.use('/blog', update_blog);
-    res.render('home');
+    res.render('home', {
+        title: config.title ,
+        slogan: config.slogan,
+        session: req.session
+    });
+
 });
 
+app.get('/about', function (req, res) {
+    // app.use('/blog', update_blog);
+    res.render('about', {
+        title: config.title + " | About us",
+        slogan: config.slogan,
+        session: req.session
+    });
+});
 
 /// catch 404 and forwarding to error handler
 // app.use(function(req, res, next) {
