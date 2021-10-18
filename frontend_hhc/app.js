@@ -13,7 +13,6 @@ var dotenv = require('dotenv').config();
 var debug = require('debug')('my-application');
 
 //Routes
-var routes = requite('/routes/index');
 var contact = require('./routes/contact');
 var admin = require('./routes/admin');
  
@@ -43,15 +42,14 @@ app.use(session({
     }
 }));
 
-app.use('/', routes);
 app.use('/contact', contact);
 app.use('/admin', admin);
  
 
-// app.get('/test', function (req, res) {
-//     // app.use('/blog', update_blog);
-//     res.send("works");
-// });
+app.get('/home', function (req, res) {
+    // app.use('/blog', update_blog);
+    res.render('home');
+});
 
 
 /// catch 404 and forwarding to error handler
