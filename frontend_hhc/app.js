@@ -15,6 +15,7 @@ var debug = require('debug')('my-application');
 //Routes
 var contact = require('./routes/contact');
 var admin = require('./routes/admin');
+var index = require('./routes/index');
  
 
 var app = express();
@@ -44,6 +45,7 @@ app.use(session({
 
 app.use('/contact', contact);
 app.use('/admin', admin);
+app.use('/', index);
  
 
 app.get('/home', function (req, res) {
