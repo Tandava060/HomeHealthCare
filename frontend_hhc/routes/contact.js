@@ -1,5 +1,6 @@
 var express = require('express');
 var config = require('../config/config');
+const auth = require("../config/email")
 var router = express.Router();
 var session = require('express-session');
 const request = require('request');
@@ -8,12 +9,11 @@ const nodemailer = require('nodemailer');
 
 
 const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false, 
+    host: 'smtppro.zoho.com',
+    port: 465,
     auth: {
-        user: 'unrism.ltd@gmail.com',
-        pass: ''
+        user: auth.email,
+        pass: auth.pass
     }
 })
 
@@ -62,10 +62,11 @@ router.post('/', function(req, res) {
             }
 
             var msg = {
-                from: 'unrism.ltd@gmail.com',
+                from: 'ceo@unrism.com',
                 to: 'appadooashwin@gmail.com', 
                 subject: 'Recruitment for ' + req.body.name,
-                html: "<p>you have received a new client<p><p>Name: ${req.body.name}</p><p>Email: ${req.body.email}</p><p>Phone: ${req.body.phone}</p><p>Service: ${req.body.Service}</p><p>Description: ${req.body.description}</p> " 
+                // text: 'test'
+                html: "<p>you have received a new client<p><p>Name: " + req.body.name + "</p><p>Email: " + req.body.email + "</p><p>Phone: " + req.body.phone + "</p><p>Service: " + req.body.Service + "</p><p>Description: " + req.body.description + "</p> " 
             }
 
             transporter.sendMail(msg,function(error, info) {

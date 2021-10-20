@@ -17,6 +17,9 @@ const contactForm = new mongoose.Schema({
     service: {
         type: String,
     },
+    description: {
+        type: String,
+    },
     sent_on:{
         type:Date,
         default: Date.now()
