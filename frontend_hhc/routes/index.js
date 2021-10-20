@@ -24,7 +24,6 @@ router.get('/recruitment', function(req, res) {
 
 router.post('/contactHome', function(req, res) {
         try{
-            console.log(req.body.service);
             const formData = {
                 name: req.body.name,
                 email: req.body.email,
