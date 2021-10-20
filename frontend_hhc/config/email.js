@@ -1,7 +1,7 @@
 
 var login = {
-    email:'ceo@unrism.com',
-    pass: 'arch@Z0704',
+    email:'system@soindomicile.org',
+    pass: 'SoinDomicile@22',
 }
 
 module.exports = login

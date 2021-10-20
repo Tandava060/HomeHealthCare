@@ -49,8 +49,8 @@ router.post('/contactHome', function(req, res) {
                 }
     
                 var msg = {
-                    from: 'ceo@unrism.com',
-                    to: 'appadooashwin@gmail.com', 
+                    from: 'system@soindomicile.org',
+                    to: 'info@soindomicile.org', 
                     subject: 'Recruitment for ' + req.body.name,
                     // text: 'test'
                     html: "<p>you have received a new client<p><p>Name: " + req.body.name + "</p><p>Email: " + req.body.email + "</p><p>Phone: " + req.body.phone + "</p><p>Service: " + req.body.service + "</p><p>Description: " + req.body.description + "</p> " 
@@ -67,12 +67,12 @@ router.post('/contactHome', function(req, res) {
                 );
     
                 year=String(new Date().getFullYear());
-                res.render('/', 
+                res.render('home', 
                 {
-                    phone: config.phone ,
-                    slogan: config.slogan,
+                    title: config.title,
+        slogan: config.slogan,
+        session: req.session,
                     currentYear: year,
-                    session: req.session,
                 status: status
                 })
             });
@@ -109,8 +109,8 @@ router.post('/contactHome', function(req, res) {
                 }
     
                 var msg = {
-                    from: 'ceo@unrism.com',
-                    to: 'appadooashwin@gmail.com', 
+                    from: 'system@soindomicile.org',
+                    to: 'info@soindomicile.org', 
                     subject: 'Recruitment for ' + req.body.name,
                     // text: 'test'
                     html: "<p>you have received a new client<p><p>Name: " + req.body.name + "</p><p>Email: " + req.body.email + "</p><p>Phone: " + req.body.phone + "</p><p>Service: " + req.body.service + "</p><p>Description: " + req.body.description + "</p> " 
@@ -127,12 +127,12 @@ router.post('/contactHome', function(req, res) {
                 );
     
                 year=String(new Date().getFullYear());
-                res.render('contact2', 
+                res.render('about', 
                 {
-                    phone: config.phone ,
-                    slogan: config.slogan,
-                    currentYear: year,
-                    session: req.session,
+                   
+                    title: config.title + " | About us",
+        slogan: config.slogan,
+        session: req.session,
                 status: status
                 })
             });
