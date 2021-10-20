@@ -6,14 +6,14 @@ exports.sendContactForm=async(request,reply)=> {
     try{
         if (await common.secure(request.headers['x-api-key']) == true) {
             
-            if (request.body.name && request.body.email && request.body.title && request.body.content){
+            if (request.body.name && request.body.email){
                 const now=Date.now();
                 const newContactForm = {
                     ID: await common.generateNextFormId(),
                     name: request.body.name,
                     email: request.body.email,
-                    title: request.body.title,
-                    content: request.body.content,
+                    phone: request.body.phone,
+                    service: request.body.service,
                     sent_on: now
                 }
                 
@@ -70,8 +70,8 @@ exports.searchContactForm=async(request,reply)=> {
                 const currentContactForm = {
                     name: currentForm.name,
                     email: currentForm.email,
-                    title: currentForm.title,
-                    content: currentForm.content,
+                    title: currentForm.phone,
+                    phone: currentForm.service,
                     sent_on: currentForm.sent_on
                 } 
                 return await common.respond(currentContactForm);

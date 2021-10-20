@@ -4,12 +4,26 @@ var router = express.Router();
 var session = require('express-session');
 const request = require('request');
 var baseUrl = config.Url;
+const nodemailer = require('nodemailer');
+
+
+const transporter = nodemailer.createTransport({
+    host: 'smtp.gmail.com',
+    port: 587,
+    secure: false, 
+    auth: {
+        user: 'unrism.ltd@gmail.com',
+        pass: ''
+    }
+})
+
+
 
 router.get('/', function(req, res) {
     try{
         year=String(new Date().getFullYear());
         res.render('contact', {
-            title: config.title ,
+            phone: config.phone ,
             slogan: config.slogan,
             currentYear: year,
             session: req.session,
@@ -27,8 +41,8 @@ router.post('/', function(req, res) {
         const formData = {
             name: req.body.name,
             email: req.body.email,
-            title: req.body.title,
-            budget: req.body.budget,
+            phone: req.body.phone,
+            service: req.body.service,
             description: req.body.description
         };
         var url = baseUrl + "/api/contactForm/sendContactForm";
@@ -46,10 +60,28 @@ router.post('/', function(req, res) {
                 return console.log(err);
                 
             }
+
+            var msg = {
+                from: 'unrism.ltd@gmail.com',
+                to: 'appadooashwin@gmail.com', 
+                subject: 'Recruitment for ' + req.body.name,
+                html: "<p>you have received a new client<p><p>Name: ${req.body.name}</p><p>Email: ${req.body.email}</p><p>Phone: ${req.body.phone}</p><p>Service: ${req.body.Service}</p><p>Description: ${req.body.description}</p> " 
+            }
+
+            transporter.sendMail(msg,function(error, info) {
+                if(error) {
+                    console.log(error);
+                } else {
+                    console.log(info.response);
+                }
+            }
+              
+            );
+
             year=String(new Date().getFullYear());
             res.render('contact', 
             {
-                title: config.title ,
+                phone: config.phone ,
                 slogan: config.slogan,
                 currentYear: year,
                 session: req.session,
@@ -85,7 +117,7 @@ router.get('/admin', function(req,res){
                     year=String(new Date().getFullYear());
                     res.render('viewContact', {
                         formData: formData,
-                        title: config.title ,
+                        phone: config.phone ,
                         currentYear: year,
                         slogan: config.slogan,
                         session: req.session
@@ -126,7 +158,7 @@ router.get('/view/:id', function(req,res){
                     year=String(new Date().getFullYear());
                     res.render('singleContact', {
                         contact: response.body,
-                        title: config.title ,
+                        phone: config.phone ,
                         slogan: config.slogan,
                         currentYear: year,
                         session: req.session,

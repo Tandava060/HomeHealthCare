@@ -11,10 +11,10 @@ const contactForm = new mongoose.Schema({
     email: {
         type: String,
     },
-    title: {
+    phone: {
         type: String,
     },
-    content: {
+    service: {
         type: String,
     },
     sent_on:{
