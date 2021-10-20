@@ -4,10 +4,13 @@
             <div class="row">
                 <div class="col-md-2 col-xs-4">
                     <a href="/" title="Pofo" class="logo">
-                        <h6 style="padding-top: 30%;"><%= title %></h6>
+                        <h6 style="padding-top: 30%;">
+                            <%= title %>
+                        </h6>
                         <!-- <img src="images/logo.png" data-rjs="images/logo@2x.png" class="logo-dark default" alt="Pofo"><img src="images/logo-white.png" data-rjs="images/logo-white@2x.png" alt="Pofo" class="logo-light"> -->
                     </a>
                 </div>
+
                 <div class="col-md-7 col-xs-8 width-auto pull-right accordion-menu xs-no-padding-right">
                     <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#navbar-collapse-toggle-1">
                         <span class="sr-only">toggle navigation</span>
@@ -18,13 +21,10 @@
                     <div class="navbar-collapse collapse pull-right" id="navbar-collapse-toggle-1">
                         <ul id="accordion" class="nav navbar-nav navbar-left no-margin alt-font text-normal" data-in="fadeIn" data-out="fadeOut">
                             <li clss="dropdown simple-dropdown">
-                                
+
                             </li>
                             <li class="dropdown megamenu-fw">
                                 <a href="/admin/login">Dashboard</a>
-                            </li>
-                            <li class="dropdown simple-dropdown">
-                                <a href="/blogs/admin-view">Blog </a>
                             </li>
                             <li class="dropdown simple-dropdown">
                                 <a href="/contact/admin">Contact Forms</a>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="col-md-2 width-auto">
                     <div class="header-social-icon xs-display-none">
-                        
+
                         <span class="alt-font text-deep-pink text-medium margin-5px-bottom display-block"> Admin: <%= session.user.name %> </span>
                         <form action="/admin/logout">
                             <button class="btnLogOut"> Log Out</button>

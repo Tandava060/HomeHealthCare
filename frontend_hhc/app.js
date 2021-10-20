@@ -23,7 +23,7 @@ var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
-app.use(favicon("./public/images/favicon.ico")); 
+app.use(favicon("./public/images/favicon.ico"));
 
 // app.use(logger('dev')); 
 app.use(bodyParser.json({ limit: '200mb' }));
@@ -48,24 +48,37 @@ app.use('/admin', admin);
 app.use('/', index);
  
 
-app.get('/home', function (req, res) {
+
+app.get('/', function(req, res) {
     // app.use('/blog', update_blog);
     res.render('home', {
-        title: config.title ,
+        title: config.title,
         slogan: config.slogan,
-        session: req.session
+        session: req.session,
+        status: null
     });
 
 });
 
-app.get('/about', function (req, res) {
+app.get('/about', function(req, res) {
     // app.use('/blog', update_blog);
     res.render('about', {
         title: config.title + " | About us",
         slogan: config.slogan,
+        session: req.session,
+        status: null
+    });
+});
+
+app.get('/department', function(req, res) {
+    // app.use('/blog', update_blog);
+    res.render('department', {
+        title: config.title + " | Department",
+        slogan: config.slogan,
         session: req.session
     });
 });
+
 
 /// catch 404 and forwarding to error handler
 // app.use(function(req, res, next) {
