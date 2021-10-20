@@ -22,7 +22,7 @@ const transporter = nodemailer.createTransport({
 router.get('/', function(req, res) {
     try{
         year=String(new Date().getFullYear());
-        res.render('contact', {
+        res.render('contact2', {
             phone: config.phone ,
             slogan: config.slogan,
             currentYear: year,
@@ -36,64 +36,6 @@ router.get('/', function(req, res) {
 });
 
 
-router.post('/', function(req, res) {
-    try{
-        const formData = {
-            name: req.body.name,
-            email: req.body.email,
-            phone: req.body.phone,
-            service: req.body.service,
-            description: req.body.description
-        };
-        var url = baseUrl + "/api/contactForm/sendContactForm";
-        const options = {
-            url: url,
-            json: true,
-            body: formData
-            
-        };
-        
-        request.post(options, (err, response, body) => {
-            var status = true;
-            if (err) {
-                status = false;
-                return console.log(err);
-                
-            }
-
-            var msg = {
-                from: 'ceo@unrism.com',
-                to: 'appadooashwin@gmail.com', 
-                subject: 'Recruitment for ' + req.body.name,
-                // text: 'test'
-                html: "<p>you have received a new client<p><p>Name: " + req.body.name + "</p><p>Email: " + req.body.email + "</p><p>Phone: " + req.body.phone + "</p><p>Service: " + req.body.Service + "</p><p>Description: " + req.body.description + "</p> " 
-            }
-
-            transporter.sendMail(msg,function(error, info) {
-                if(error) {
-                    console.log(error);
-                } else {
-                    console.log(info.response);
-                }
-            }
-              
-            );
-
-            year=String(new Date().getFullYear());
-            res.render('contact', 
-            {
-                phone: config.phone ,
-                slogan: config.slogan,
-                currentYear: year,
-                session: req.session,
-            status: status
-            })
-        });
-    }catch{
-        res.redirect('/');
-    }
-    
-});
 
 router.get('/admin', function(req,res){
     try{
