@@ -46,7 +46,7 @@ app.use('/contact', contact);
 app.use('/admin', admin);
 
 
-app.get('/home', function(req, res) {
+app.get('/', function(req, res) {
     // app.use('/blog', update_blog);
     res.render('home', {
         title: config.title,
