@@ -2,21 +2,25 @@ const common = require('./common');
 const Cforms= require("../models/contactForm");
 const cforms= require("../models/contactForm");
 
+
 exports.sendContactForm=async(request,reply)=> {
+    
     try{
-        if (await common.secure(request.headers['x-api-key']) == true) {
             
-            if (request.body.name && request.body.email && request.body.title && request.body.content){
+
+            if (request.body.name && request.body.email){
+                
                 const now=Date.now();
                 const newContactForm = {
                     ID: await common.generateNextFormId(),
                     name: request.body.name,
                     email: request.body.email,
-                    title: request.body.title,
-                    content: request.body.content,
+                    phone: request.body.phone,
+                    service: request.body.service,
+                    description: request.body.description,
                     sent_on: now
                 }
-                
+                console.log(newContactForm);
                 const cforms= new Cforms(newContactForm);
                 const created= await cforms.save();
 
@@ -26,10 +30,7 @@ exports.sendContactForm=async(request,reply)=> {
             else{
                 return await common.error("error sending form");
             }
-            
-        } else{
-            return await common.error("Invalid request");
-        }
+      
     }catch(err){
         console.log(err);
         // throw boom.boomify(err);
@@ -42,6 +43,7 @@ exports.viewContactForm=async(request, reply)=>{
         if (await common.secure(request.headers['x-api-key']) == true) {
             const allForms = await Cforms.find({
             });
+
             
             finalresponse = common.trimMongo(allForms);
             
@@ -61,17 +63,20 @@ exports.viewContactForm=async(request, reply)=>{
 exports.searchContactForm=async(request,reply)=> {
     try{
         if (await common.secure(request.headers['x-api-key']) == true) {
-                
+                console.log(req.body.name);
             if (request.body.name){
                 const currentForm = await Cforms.findOne({
                     name: request.body.name
                 });
 
+                console.log(currentForm);
+
                 const currentContactForm = {
                     name: currentForm.name,
                     email: currentForm.email,
-                    title: currentForm.title,
-                    content: currentForm.content,
+                    title: currentForm.phone,
+                    phone: currentForm.service,
+                    description: currentForm.description,
                     sent_on: currentForm.sent_on
                 } 
                 return await common.respond(currentContactForm);
@@ -84,6 +89,47 @@ exports.searchContactForm=async(request,reply)=> {
             return await common.error("Invalid request");
         }
     }catch(err){
+        console.log(err);
+        // throw boom.boomify(err);
+        return await common.error(err);
+    }
+}
+
+
+exports.getOne = async (req, reply) => {
+    try {
+        if (await common.secure(req.headers['x-api-key']) == true) {
+            var data;
+           Cforms.findOne({
+                ID: req.params.id
+            },  data = function(err, result) {
+                if (err) throw err;
+                 data = result;
+                 reply.send(result);
+            });
+          
+        } else {
+            return await common.error("Invalid Request");
+        }
+    } catch (err) {
+        console.log(err);
+        // throw boom.boomify(err);
+        return await common.error(err);
+    }
+}
+
+exports.delete = async (req, reply) => {
+    try {
+        if (await common.secure(req.headers['x-api-key']) == true) {
+            await Cforms.findOneAndDelete({
+                ID: req.body.ID
+            })
+
+            return await common.respond("Success");
+        } else {
+            return await common.error("Invalid Request");
+        }
+    } catch (err) {
         console.log(err);
         // throw boom.boomify(err);
         return await common.error(err);

@@ -24,7 +24,7 @@
         <link rel="stylesheet" href="/css/dashboard.css" />
     </head>
     <body>
-      <%- include('./partials/navbarAdmin.ejs') %>
+      <%- include('partials/navbarAdmin.ejs') %>
       <section class="wow fadeIn">
         <div class="container mt-5">
             <h3>Contact Form Answers</h3>
@@ -33,9 +33,9 @@
                     <thead>
                       <tr class="table-info">
                         <th scope="col">No</th>
-                        <th scope="col">Title</th>
                         <th scope="col">Client Name</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Phone</th>
                         <th scope="col">view</th>
                         <th scope="col">Delete</th>
                       </tr>
@@ -45,9 +45,9 @@
                         <% formData.forEach(function(data){ %>
                       <tr>
                         <th scope="row"><%= i %></th>
-                        <td><%= data.title %></td>
                         <td><%= data.name %></td>
                         <td><%= data.email %></td>
+                        <td><%= data.phone %></td>
                         <td class="text-center"><a href="/contact/view/<%= data.ID %>" class="btn btn-primary ">More info</a></td>
                         <td class="text-center"><form action="/contact/delete/<%= data.ID %>" method="POST"><button type="submit" class="btn btn-danger">Delete</button></form></td>
                       </tr>

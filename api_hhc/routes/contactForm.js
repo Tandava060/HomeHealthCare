@@ -12,10 +12,17 @@ const routes = [
         handler: contactForm.viewContactForm
     },
     {
+        method: 'GET',
+        url:'/api/contactForm/viewOne/:id',
+        handler: contactForm.getOne
+    },
+
+    {
         method: 'POST',
-        url:'/api/contactForm/searchContactForm',
-        handler: contactForm.searchContactForm
+        url:'/api/contactForm/delete',
+        handler: contactForm.delete
     }
 ]
+
 
 module.exports=routes

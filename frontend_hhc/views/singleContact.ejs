@@ -23,9 +23,14 @@
         <link rel="stylesheet" href="/css/dashboard.css" />
     </head>
     <body>
-      <%- include('./partials/navbarAdmin.ejs') %>
+      <%- include('partials/navbarAdmin.ejs') %>
       <section class="wow fadeIn">
-        <div class="container mt-5">
+       <div class="mb-5">
+        <a href="/contact/admin" class=" btn-lg btn-primary " style="margin-left: 5%;">back</a>
+       </div>
+        <div class="container mt-5"  style="margin-top: 5%;">
+
+        
             <div class="row">
           
                 <h4 class="mt-4">Contact form #<%=contact.ID %></h4>
@@ -50,12 +55,12 @@
                   />
                 </div>
                 <div class="col-md-4 mt-4">
-                  <label for="title" class="form-label">Title</label>
+                  <label for="phone" class="form-label">Phone</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="title"
-                    value="<%=contact.title%>"
+                    id="phone"
+                    value="<%=contact.phone%>"
                     readonly
                   />
                 </div>
@@ -65,27 +70,27 @@
                     type="text"
                     class="form-control"
                     id="date"
-                    value="<%=contact.sent_on.slice(0,10)%>"
+                    value="<%=contact.sent_on%>"
                     readonly
                   />
                 </div>
                 <div class="col-md-4 mt-4">
-                  <label for="budget" class="form-label">Budget</label>
+                  <label for="service" class="form-label">Service</label>
                   <input
                     type="text"
                     class="form-control"
-                    id="budget"
-                    value="<%=contact.budget%>"
+                    id="service"
+                    value="<%=contact.service%>"
                     readonly
                   />
                 </div>
                 <div class="col-sm-12 mt-4">
-                  <label for="content" class="form-label">Content</label>
+                  <label for="description" class="form-label">Description</label>
                   <textarea
                     cols="10"
                     type="text"
                     class="form-control"
-                    id="content"
+                    id="description"
                     readonly
                   >
                   <%=contact.description%></textarea
@@ -94,7 +99,6 @@
               </div>
         </div>
       </section>
-        <%- include('./partials/footer.ejs') %>
         
         
         <script src="" async defer></script>
