@@ -23,10 +23,10 @@ router.get('/', function(req, res) {
     try{
         year=String(new Date().getFullYear());
         res.render('contact2', {
-            phone: config.phone ,
-            slogan: config.slogan,
-            currentYear: year,
-            session: req.session,
+            title: config.title,
+                         slogan: config.slogan,
+                         session: req.session,
+                         currentYear: year,
             status: null
 
         });
@@ -60,11 +60,12 @@ router.get('/admin', function(req,res){
                     year=String(new Date().getFullYear());
                     res.render('viewContact', {
                         formData: formData,
-                        phone: config.phone ,
-                        currentYear: year,
-                        slogan: config.slogan,
-                        session: req.session
-                    });
+                        title: config.title,
+                         slogan: config.slogan,
+                         session: req.session,
+                         currentYear: year,
+                }
+                    );
                 }
         
             });
@@ -101,10 +102,10 @@ router.get('/view/:id', function(req,res){
                     year=String(new Date().getFullYear());
                     res.render('singleContact', {
                         contact: response.body,
-                        phone: config.phone ,
-                        slogan: config.slogan,
-                        currentYear: year,
-                        session: req.session,
+                        title: config.title,
+                         slogan: config.slogan,
+                         session: req.session,
+                         currentYear: year,
                         status: null
                     });
                 }
