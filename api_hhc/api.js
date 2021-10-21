@@ -2,7 +2,7 @@
 const helmet = require('fastify-helmet'); //Security middleware
 //const swagger = require("./config/swagger"); //API Documentation
 
-const mongoose= require("./config/database.js");
+const mongoose = require("./config/database.js");
 
 //Routes
 const authentication_routes = require("./routes/authentication");
@@ -36,16 +36,16 @@ cf_routes.forEach((route, index) => {
 });
 
 //Static Routes
-app.get('/api/', async (request, reply) => {
+app.get('/api/', async(request, reply) => {
     return {
         server: "online"
     }
 })
 
 //Start Server in async mode
-const start = async () => {
+const start = async() => {
     try {
-        await app.listen(3000, '0.0.0.0');
+        await app.listen(3001, '0.0.0.0');
         //app.swagger();
         console.log(`Server started on ${app.server.address().port}`);
     } catch (err) {
