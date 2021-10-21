@@ -6,7 +6,7 @@ config.slogan = "Our aim is to avoid hospitalisation, where treatments can be gi
 config.apikey = "wdejfklej-dwqfdhjkqwd-dwqhdqk-q4679873fdh";
 config.adminuser = "";
 
-config.baseUrl = "https://soindomicile.org";
+config.baseUrl = "http://soindomicile.org";
 //config.baseUrl = "http://localhost";
 config.port = 3001;
 config.Url = config.baseUrl + ":" + String(config.port);
