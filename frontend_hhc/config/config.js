@@ -2,7 +2,8 @@
 config = {};
 
 config.title = "Soin Domicile";
-config.slogan = "Our aim is to avoid hospitalisation, where treatments can be given a Domicile itself we do it but on Doctor's instructions";
+// config.slogan = "Our aim is to avoid hospitalisation, where treatments can be given a Domicile itself we do it but on Doctor's instructions";
+config.slogan = "We are a health care company providing medical and nursing care at your place.";
 config.apikey = "wdejfklej-dwqfdhjkqwd-dwqhdqk-q4679873fdh";
 config.adminuser = "";
 
