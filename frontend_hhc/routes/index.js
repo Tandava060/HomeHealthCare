@@ -50,7 +50,7 @@ router.post('/contactHome', function(req, res) {
                 var msg = {
                     from: 'system@soindomicile.org',
                     to: 'info@soindomicile.org', 
-                    subject: 'Recruitment for ' + req.body.name,
+                    subject: 'Patient Request for ' + req.body.name,
                     // text: 'test'
                     html: "<p>you have received a new client<p><p>Name: " + req.body.name + "</p><p>Email: " + req.body.email + "</p><p>Phone: " + req.body.phone + "</p><p>Service: " + req.body.service + "</p><p>Description: " + req.body.description + "</p> " 
                 }

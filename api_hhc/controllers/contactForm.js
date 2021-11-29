@@ -11,8 +11,9 @@ exports.sendContactForm=async(request,reply)=> {
             if (request.body.name && request.body.email){
                 
                 const now=Date.now();
+
                 const newContactForm = {
-                    ID: await common.generateNextFormId(),
+                    ID: now.toString(),
                     name: request.body.name,
                     email: request.body.email,
                     phone: request.body.phone,
